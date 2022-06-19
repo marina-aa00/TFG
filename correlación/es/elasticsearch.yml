@@ -88,5 +88,6 @@ discovery.type: single-node
 #
 # Require explicit names when deleting indices:
 #
+#
 #action.destructive_requires_name: true
 #reindex.remote.whitelist: "138.4.7.158:9200, 127.0.10.*:9200, localhost:*"
