@@ -3,7 +3,6 @@ El comando que emplear para ejecutar Suricata en modo offline pcap es el que se 
 ```shell
 $ suricata -c /etc/suricata/suricata.yaml -r /ruta/al/fichero/pcap
 ```
-
 Por otro lado, para ejecutar Snort en modo pcap, el comando a utilizar es el siguiente
 ```shell
 $ sudo snort -c snort.conf -r /ruta/al/fichero/pcap
