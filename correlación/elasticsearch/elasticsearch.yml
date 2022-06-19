@@ -1,6 +1,5 @@
 #======================== Elasticsearch Configuration =========================
 #
-#
 # NOTE: Elasticsearch comes with reasonable defaults for most settings.
 # Before you set out to tweak and tune the configuration, make sure you
 # understand what are you trying to accomplish and the consequences.
@@ -8,8 +7,7 @@
 # The primary way of configuring a node is via this file. This template lists
 # the most important settings you may want to configure for a production cluster.
 #
-# Please consult the documentation for further information on configuration
-options:
+# Please consult the documentation for further information on configuration options:
 #https://www.elastic.co/guide/en/elasticsearch/reference/index.html
 #
 #---------------------------------- Cluster -----------------------------------
@@ -30,8 +28,7 @@ options:
 #
 # ----------------------------------- Paths ------------------------------------
 #
-# Path to directory where to store the data (separate multiple locations by
-comma):
+# Path to directory where to store the data (separate multiple locations by  comma):
 #path.data: /var/lib/elasticsearch
 #path.data: /path/to/data
 #
@@ -59,11 +56,9 @@ network.host: 192.168.56.2
 http.cors.enabled: true
 http.cors.allow-origin : "*"
 #
-
-51
-
 # Set a custom port for HTTP:
 #
+
 #
 # For more information, consult the network module documentation.
 #
@@ -79,8 +74,7 @@ discovery.type: single-node
 #
 #cluster.initial_master_nodes: ["node-1", "node-2"]
 #
-# For more information, consult the discovery and cluster formation module
-documentation.
+# For more information, consult the discovery and cluster formation module documentation.
 #
 #---------------------------------- Gateway -----------------------------------
 #
