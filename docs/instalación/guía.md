@@ -3,7 +3,7 @@
 1.	Primero, se importa la clave PGP de Elastic introduciendo en la consola el comando : 
     ```shell
     
-    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
+    $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
     
     
       ```
@@ -13,7 +13,7 @@
 2.	Luego, se instala el paquete apt-transport-https a través del comando: 
      ```shell
 
-    sudo apt-get install apt-transport-https
+    $ sudo apt-get install apt-transport-https
     
     
        ```
@@ -21,7 +21,7 @@
 3.	Después, se añade el repositorio de Elastic a la lista de repositorios del sistema con el comando: 
      ```shell
 
-    echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee –a /etc/apt/sources.list.d/elastic-7.x.list
+    $ echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee –a /etc/apt/sources.list.d/elastic-7.x.list
     
     
        ```
@@ -29,7 +29,7 @@
 4.	Tras esto último, se instala Logstash introduciendo el comando: 
      ```shell
 
-    sudo apt-get install logstash
+    $ sudo apt-get install logstash
     
     
        ```
@@ -37,7 +37,7 @@
 5.	Una vez instalado Logstash, se arranca el servicio: 
      ```shell
 
-    sudo systemctl start logstash
+    $ sudo systemctl start logstash
     
     
        ```
@@ -45,7 +45,7 @@
     y se habilita a través de 
      ```shell
 
-    sudo systemctl enable logstash
+    $ sudo systemctl enable logstash
     
     
        ```
@@ -53,7 +53,7 @@
 6.	Para comprobar el estado en el que se encuentra el servicio, se ejecuta el siguiente comando:
      ```shell
 
-    sudo systemctl status logstash
+    $ sudo systemctl status logstash
     
     
        ```
@@ -63,9 +63,9 @@
 7.	Por último, para la instalación de Logstash se deben instalar los plugins logstash-filter-prune y logstash-filter-uuid, lo cual se realiza a través de los siguientes comandos: 
      ```shell
 
-    sudo bin/logstash-plugin install logstash-filter-prune
+    $ sudo bin/logstash-plugin install logstash-filter-prune
 
-    sudo bin/logstash-plugin install logstash-filter-uuid
+    $ sudo bin/logstash-plugin install logstash-filter-uuid
     
     
        ```
@@ -73,7 +73,7 @@
 8.	Del mismo modo, para instalar Filebeat se ejecuta el comando: 
      ```shell
 
-    sudo apt-get install filebeat
+    $ sudo apt-get install filebeat
     
     
        ```
@@ -81,9 +81,9 @@
 9.	Finalmente, una vez instalado Filebeat, se arranca y habilita el servicio utilizando para ello los comandos: 
      ```shell
 
-    sudo systemctl start filebeat
+    $ sudo systemctl start filebeat
 
-    sudo systemctl enable filebeat
+    $ sudo systemctl enable filebeat
     
     
        ```
@@ -91,11 +91,11 @@
 1.	Primero, se ejecutan los siguientes comandos: 
      ```shell
 
-    sudo apt-get install software-properties-common
+    $ sudo apt-get install software-properties-common
 
-    sudo add-apt-repository ppa:oisf/suricata-stable
+    $ sudo add-apt-repository ppa:oisf/suricata-stable
 
-    sudo apt-get update
+    $ sudo apt-get update
     
     
        ```
@@ -106,7 +106,7 @@
 2.	Una vez se han ejecutado dichos comandos, se instala Suricata a través de: 
      ```shell
 
-    sudo apt-get install suricata
+    $ sudo apt-get install suricata
     
     
        ```
@@ -114,8 +114,8 @@
     y se actualiza en caso de que sea necesario a través de 
      ```shell
 
-    sudo apt-get update
-    sudo apt-get upgrade suricata
+    $ sudo apt-get update
+    $ sudo apt-get upgrade suricata
     
     
        ```
@@ -123,7 +123,7 @@
 3.	Finalmente, se actualizan las reglas proporcionadas por defecto por Suricata con el comando:
      ```shell
 
-    sudo suricata-update
+    $ sudo suricata-update
     
     
        ```
@@ -131,7 +131,7 @@
 1.	En primer lugar, antes de comenzar con la instalación propia de Snort, se deben instalar un conjunto de librerías requeridas por dicho sensor, utilizando para ello el comando a continuación: 
      ```shell
 
-    sudo apt install -y gcc libpcre3-dev zlib1g-dev libluajit-5.1-dev 
+    $ sudo apt install -y gcc libpcre3-dev zlib1g-dev libluajit-5.1-dev 
     libpcap-dev openssl libssl-dev libnghttp2-dev libdumbnet-dev 
 	  bison flex libdnet autoconf libtool
 	  
@@ -141,7 +141,7 @@
 2.	Tras haber ejecutado dicho comando se procede a iniciar la instalación de Snort, creando en primer lugar un directorio temporal en donde descargar los contenidos a través del comando: 
      ```shell
 
-    mkdir ~/snort_src && cd ~/snort_src
+    $ mkdir ~/snort_src && cd ~/snort_src
     
     
        ```
@@ -149,15 +149,15 @@
 3.	Tras la realización de esto último, se ejecuta el comando a continuación para descargar el paquete fuente DAQ (Data Acquisition Library) en su última versión disponible, el cual permite realizar llamadas abstractas a librerías pcap: 
      ```shell
 
-    wget https://www.snort.org/downloads/snort/daq-2.0.7.tar.gz
+    $ wget https://www.snort.org/downloads/snort/daq-2.0.7.tar.gz
     
     
        ```
 
 4.	Una vez se ha completado la descarga anterior, se extrae el código fuente y se desplaza al nuevo directorio utilizando los comandos:
      ```shell
-    tar -xvzf daq-2.0.7.tar.gz
-    cd daq-2.0.7
+    $ tar -xvzf daq-2.0.7.tar.gz
+    $ cd daq-2.0.7
     
     
        ```
@@ -165,7 +165,7 @@
 5.	Antes de realizar la compilación de dicho programa, se debe reconfigurar DAQ al haberse instalado la última versión de este paquete. Para ello se utiliza el comando: 
      ```shell
 
-    autoreconf -f -i
+    $ autoreconf -f -i
     
     
        ```
@@ -175,7 +175,7 @@
 6.	Tras haberse realizado el paso anterior, se lleva a cabo la compilación e instalación del programa usando para ello el comando: 
      ```shell
 
-    ./configure && make && sudo make install 
+    $ ./configure && make && sudo make install 
     
     
        ```
@@ -183,7 +183,7 @@
 7.	Una vez se ha instalado el paquete DAQ, se lleva a cabo la instalación de Snort. Para ello, primero hay que desplazarse al directorio creado al principio del proceso de instalación 
      ```shell
 
-    cd ~/snort_src
+    $ cd ~/snort_src
     
     
        ```
@@ -191,7 +191,7 @@
     y una vez allí, se ejecuta el comando a continuación para instalarse el código fuente de Snort:
      ```shell
 
-    wget https://www.snort.org/downloads/snort/snort-2.9.19.tar.gz
+    $ wget https://www.snort.org/downloads/snort/snort-2.9.19.tar.gz
     
     
        ```
@@ -199,8 +199,8 @@
 8.	Una vez se ha completado la descarga anterior, se extrae el código fuente y se desplaza al nuevo directorio utilizando los comandos: 
      ```shell
 
-    tar -xvzf snort-2.9.19.tar.gz
-    cd snort-2.9.19
+    $ tar -xvzf snort-2.9.19.tar.gz
+    $ cd snort-2.9.19
     
     
        ```
@@ -208,7 +208,7 @@
 9.	Finalmente se construye e instala el software a través del comando a continuación, en donde se ha habilitado sourcefire: 
      ```shell
 
-    ./configure --enable-sourcefire && make && sudo make install
+    $ ./configure --enable-sourcefire && make && sudo make install
     
     
        ```
