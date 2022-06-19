@@ -1908,4 +1908,4 @@ reference-config-file: /etc/suricata/reference.config
 # You can specify more than 2 configuration files, if needed.
 #include: include1.yaml
 #include: include2.yaml
-#
+
