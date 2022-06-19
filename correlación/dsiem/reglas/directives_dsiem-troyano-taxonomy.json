@@ -1,0 +1,59 @@
+{
+  "directives": [
+    {
+      "name": "Detección de troyano (taxonomy)", 
+      "kingdom": "Exploitation & Installation", 
+      "category": "Trojan Activity",         	
+      "id": 8,                               
+      "priority": 4,                         	
+      "rules": [
+        {
+   	  "name": "HTTP/Data POST",        
+      	  "type": "TaxonomyRule",           	 
+       	  "stage": 1,                       	
+       	  "product": ["Intrusion Detection System"], 
+       	  "category": "A Network Trojan was detected", 
+       	  "occurrence": 1,                   	
+       	  "from": "HOME_NET",                	
+       	  "to": "ANY",                       	
+       	  "port_from": "ANY",                	
+      	  "port_to": "ANY",                  	
+       	  "protocol": "TCP",                 	
+       	  "reliability": 1,
+          "timeout": 0                  
+                                           	
+        },
+        {
+    	  "name": "HTTP/Data POST",
+       	  "type": "TaxonomyRule",
+       	  "stage": 2,
+       	  "product": ["Intrusion Detection System"],
+       	  "category": "A Network Trojan was detected",
+       	  "occurrence": 2,
+       	  "from": "HOME_NET",
+       	  "to": "ANY",
+       	  "port_from": "ANY",
+       	  "port_to": "ANY",
+       	  "protocol": "TCP",
+       	  "reliability": 2,
+       	  "timeout": 3000
+        },
+        {
+   	  "name": "HTTP/Data POST",
+     	  "type": "TaxonomyRule",
+      	  "stage": 3,
+      	  "product": ["Intrusion Detection System"],
+      	  "category": "A Network Trojan was Detected",
+      	  "occurrence": 3,
+       	  "from": "HOME_NET",
+	  "to": "ANY",
+       	  "port_from": "ANY",
+       	  "port_to": "ANY",
+       	  "protocol": "TCP",
+       	  "reliability": 7,
+      	  "timeout": 6000
+        }
+      ]
+    }
+  ] 
+}
