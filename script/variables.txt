@@ -1,0 +1,2 @@
+export ES_ELASTIC_PATH="/home/vagrant/elasticsearch/bin"
+export ES_KIB_PATH="/home/vagrant/kibana/bin" 
