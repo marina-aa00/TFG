@@ -1,3 +1,4 @@
+
 {
   "index_patterns" : [ "siem_alarms-*" ],
   "version" : 1,
