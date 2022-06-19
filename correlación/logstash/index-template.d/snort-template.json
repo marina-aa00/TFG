@@ -1,4 +1,5 @@
 #Plantilla de Snort
+
 {
   "index_patterns" : [ "snort-*" ],
   "version" : 1,
