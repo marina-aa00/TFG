@@ -1,5 +1,5 @@
 # Guía de instalación de los elementos necesarios para el despliegue del sistema
-# Instalación de Logstash y Filebeat
+## Instalación de Logstash y Filebeat
 1.	Primero, se importa la clave PGP de Elastic introduciendo en la consola el comando : 
 
     wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -  
@@ -47,7 +47,7 @@
     sudo systemctl start filebeat
 
     sudo systemctl enable filebeat
-# Instalación de Suricata
+## Instalación de Suricata
 1.	Primero, se ejecutan los siguientes comandos: 
 
     sudo apt-get install software-properties-common
@@ -71,7 +71,7 @@
 3.	Finalmente, se actualizan las reglas proporcionadas por defecto por Suricata con el comando:
 
     sudo suricata-update
-# Instalación de Snort
+## Instalación de Snort
 1.	En primer lugar, antes de comenzar con la instalación propia de Snort, se deben instalar un conjunto de librerías requeridas por dicho sensor, utilizando para ello el comando a continuación: 
 
     sudo apt install -y gcc libpcre3-dev zlib1g-dev libluajit-5.1-dev 
@@ -117,19 +117,25 @@
 9.	Finalmente se construye e instala el software a través del comando a continuación, en donde se ha habilitado sourcefire: 
 
     ./configure --enable-sourcefire && make && sudo make install
-# Instalación de Dsiem
+## Instalación de Dsiem
 1.	En primer lugar, se debe instalar y posteriormente extraer la última versión binaria disponible del proyecto, utilizando para ello el comando
 
+    ```shell
+    
     export DSIEM_DIR=/var/dsiem && \
     mkdir -p $DSIEM_DIR && \
     wget https://github.com/defenxor/dsiem/releases/latest/download/dsiem-server_linux_amd64.zip -O /tmp/dsiem.zip && \
     unzip /tmp/dsiem.zip -d $DSIEM_DIR && rm -rf /tmp/dsiem.zip  && \
     cd $DSIEM_DIR
+    
+     ```
 
     en donde, tal como se puede observar, se ha instalado el software de Dsiem en el directorio creado /var/dsiem .
 
-2.	Una vez se ha descargado el proyecto, se procede a crear un servicio asociado al mismo a través de los siguientes comandos: 
-
+2.	Una vez se ha descargado el proyecto, se procede a crear un servicio asociado al mismo a través de los siguientes comandos:
+ 
+    ```shell
+    
     cat <<EOF > /etc/systemd/system/dsiem.service 
     [Unit]
     Description=Dsiem
@@ -148,13 +154,18 @@
     systemctl enable dsiem.service && \
     systemctl start dsiem.service && \
     systemctl status dsiem.service)
+    
+    ```
 
     en donde se ha configurado el servicio para que lleve a cabo un arranque automático. 
 
 3.	Finalmente, en el caso de que se quiera emplear el dashboard de Kibana proporcionado por el proyecto, se introduce el siguiente comando (cabe añadir que para llevar a cabo esta operación tanto Elasticsearch como Kibana deben estar ejecutándose) : 
+       ```shell
 
     $ ./scripts/kbndashboard-import.sh ${your-kibana-IP-or-hostname} 
       ./deployments/kibana/dashboard-siem.json
+      
+       ```
 
 
 
