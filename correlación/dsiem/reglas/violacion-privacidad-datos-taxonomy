@@ -1,0 +1,43 @@
+{
+  "directives": [
+    {
+      "name": "Violación de la privacidad de datos (taxonomy)",
+      "kingdom": "Security Compromise",
+      "category": "Potential Corporate Privacy Violation",
+      "id": 10,
+      "priority": 3,
+      "rules": [
+        {
+          "name": "Executable Content Download",
+          "type": "TaxonomyRule",
+          "stage": 1,
+          "product": ["Intrusion Detection System"],
+          "category": "Potential Corporate Privacy Violation",
+          "occurrence": 1,
+          "from": "ANY",
+          "to": "HOME_NET",
+          "port_from": "ANY",
+          "port_to": "ANY",
+          "protocol": "TCP",
+          "reliability": 2,
+          "timeout": 0
+        },
+        {
+          "name": "Executable Content Download",
+          "type": "TaxonomyRule",
+          "stage": 2,
+          "product": ["Intrusion Detection System"],
+          "category": "Potential Corporate Privacy Violation",
+          "occurrence": 2,
+          "from": "ANY",
+          "to": ":1",
+          "port_from": "ANY",
+          "port_to": "ANY",
+          "protocol": "TCP",
+          "reliability": 5,
+          "timeout": 6000
+        }
+      ]
+    }
+  ] 
+}
