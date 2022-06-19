@@ -1,28 +1,28 @@
 {
   "directives": [
     {
-      "name": "Detección de troyano (taxonomy)",//Nombre de la regla de correlación
-      "kingdom": "Exploitation & Installation",//Reino de la regla de correlación
-      "category": "Trojan Activity",         //Categoría de la regla de correlación
-      "id": 8,                               //ID de la regla de correlación
-      "priority": 4,                         //Prioridad de la regla de correlación 
+      "name": "Detección de troyano (taxonomy)", //Nombre de la regla de correlación
+      "kingdom": "Exploitation & Installation", //Reino de la regla de correlación
+      "category": "Trojan Activity",         	//Categoría de la regla de correlación
+      "id": 8,                               	//ID de la regla de correlación
+      "priority": 4,                         	//Prioridad de la regla de correlación 
       "rules": [
         {
    	      "name": "HTTP/Data POST",         //Nombre de la regla basada en taxonomía
-      	  "type": "TaxonomyRule",           //Tipo de la regla (plugin o taxonomy) 
-       	  "stage": 1,                       //Etapa de la regla
+      	  "type": "TaxonomyRule",           	//Tipo de la regla (plugin o taxonomy) 
+       	  "stage": 1,                       	//Etapa de la regla
        	  "product": ["Intrusion Detection System"], 
        	  "category": "A Network Trojan was detected", 
-       	  "occurrence": 1,                   //Nº de veces que tiene que haber match
-       	  "from": "HOME_NET",                //Subred de origen
-       	  "to": "ANY",                       //Subred de destino
-       	  "port_from": "ANY",                //Puerto de origen
-      	  "port_to": "ANY",                  //Puerto de destino
-       	  "protocol": "TCP",                 //Protocolo de red
+       	  "occurrence": 1,                   	//Nº de veces que tiene que haber match
+       	  "from": "HOME_NET",                	//Subred de origen
+       	  "to": "ANY",                       	//Subred de destino
+       	  "port_from": "ANY",                	//Puerto de origen
+      	  "port_to": "ANY",                  	//Puerto de destino
+       	  "protocol": "TCP",                 	//Protocolo de red
        	  "reliability": 1,
-        	"timeout": 0                      //Tiempo de espera desde que se produce 
-                                           //match hasta que la posible alarma se 
-                                         //descarta
+        	"timeout": 0                    //Tiempo de espera desde que se produce 
+                                           	//match hasta que la posible alarma se 
+                                         	//descarta
         },
         {
     	    "name": "HTTP/Data POST",
