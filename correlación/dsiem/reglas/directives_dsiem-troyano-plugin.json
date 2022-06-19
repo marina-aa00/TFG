@@ -1,3 +1,5 @@
+# Regla de detección de troyanos basada en plugin
+
 {
   "directives": [
     {
