@@ -87,7 +87,7 @@ elasticsearch.hosts: ["http://192.168.56.2:9200"]
 #logging.verbose: false
 
 # Set the interval in milliseconds to sample system and process performance
-# metrics. Minimum is 100ms. Defaults to 5000.
+#metrics. Minimum is 100ms. Defaults to 5000.
 #ops.interval: 5000
 
 # Specifies locale to be used for all localizable strings, dates and number #formats. Supported languages are the following: English - en , by default , #Chinese - zh-CN .
