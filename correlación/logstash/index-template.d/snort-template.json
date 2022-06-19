@@ -1,4 +1,3 @@
-#Plantilla de Snort
 
 {
   "index_patterns" : [ "snort-*" ],
