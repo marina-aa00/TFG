@@ -1,5 +1,5 @@
 # Guía de instalación de los elementos necesarios para el despliegue del sistema
-## Instalación de Logstash y Filebeat
+## Instalación de Logstash y Filebeat 
 1.	Primero, se importa la clave PGP de Elastic introduciendo en la consola el comando : 
     ```shell
     
