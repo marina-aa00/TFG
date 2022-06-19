@@ -1,0 +1,60 @@
+{
+  "directives": [
+    {
+      "name": "Detección de troyano (plugin)",  //Nombre de la regla de correlación 
+      "kingdom": "Exploitation & Installation", //Reino de la regla de correlación
+      "category": "Trojan Activity",         //Categoría de la regla de correlación
+      "id": 7,                               //ID de la regla de correlación
+      "priority": 5,                         //Prioridad de la regla de correlación
+      "rules" : [                            
+       	{ 
+	        "name": "HTTP/Data POST",          //Nombre de la regla basada en plugin
+	        "type": "PluginRule",              //Tipo de la regla (plugin o taxonomy)
+	        "stage": 1,                        //Etapa de la regla
+	        "plugin_id": 1001,                  
+	        "plugin_sid": [2034813],           
+	        "occurrence": 1,                   //Nº de veces que tiene que haber match 
+	        "from": "HOME_NET",	          //Subred de origen
+	        "to": "ANY",                      //Subred de destino
+ 	        "port_from": "ANY",               //Puerto de origen
+	        "port_to": "ANY",                 //Puerto de destino
+	        "protocol": "TCP",                //Protocolo de red
+	        "reliability": 1,                 
+	        "timeout": 0                      //Tiempo de espera desde que se produce 
+                                           //match hasta que la posible alarma se 
+                                           //descarta
+	      },
+      	{ 
+	        "name": "HTTP/Data POST",
+	        "type": "PluginRule",
+	        "stage": 2,
+	        "plugin_id": 1002,
+	        "plugin_sid": [2034813], 
+	        "occurrence": 3,
+	        "from": ":1",
+    	    "to": "ANY",
+ 	        "port_from": "ANY",
+	        "port_to": "ANY",
+	        "protocol": "TCP", 
+	        "reliability": 4, 
+	        "timeout": 3000 
+	      },
+   	    { 
+	        "name": "HTTP/Data POST",
+	        "type": "PluginRule", 
+	        "stage": 3, 
+	        "plugin_id": 1002,
+	        "plugin_sid": [2034813],
+	        "occurrence": 5,
+        	"from": ":1", 
+	        "to": "ANY",
+	        "port_from": "ANY", 
+	        "port_to": "ANY", 
+	        "protocol": "TCP", 
+	        "reliability": 10,
+	        "timeout": 6000 
+	      }
+      ]
+    }
+  ]
+}
