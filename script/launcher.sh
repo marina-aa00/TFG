@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ./launcher.sh start  ./launcher.sh stop
 source ./variables.txt
 
